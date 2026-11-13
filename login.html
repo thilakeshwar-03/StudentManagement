@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIT Student Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+
+<div class="login-card">
+    <div class="logo">VIT</div>
+
+    <h1>Student Portal</h1>
+    <p>Welcome back! Login to continue.</p>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form action="/" method="POST">
+        <label>Username</label>
+        <input type="text" name="username"
+               placeholder="Enter username" required>
+
+        <label>Password</label>
+        <input type="password" name="password"
+               placeholder="Enter password" required>
+
+        <button type="submit">Login to Portal →</button>
+    </form>
+
+    <p class="footer">VIT Student Management System</p>
+</div>
+
+</body>
+</html>
